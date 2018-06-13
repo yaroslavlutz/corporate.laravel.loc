@@ -1,0 +1,27 @@
+.v_center {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+/* ___________________________________________________________________ #HEADER */
+header#header { border-bottom:1px solid #9a9595; background:#e6e5e5; }
+section#admin_main_toolbar h1 { color:red; text-transform:uppercase; }
+section#admin_main_toolbar ul.admin-parts-link-list { padding-right:5px; }
+section#admin_main_toolbar ul.admin-parts-link-list > li {
+    color:red; padding:10px 0 10px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; border-right:1px solid #ddd; margin-top:4px; border-radius:7px; }
+section#admin_main_toolbar ul.admin-parts-link-list > li > a { color:green; text-decoration:none; text-transform:uppercase; padding-left:7px; }
+/* ___________________________________________________________________/ #HEADER */
+
+input.input-error,textarea.input-error, div.input-error { border:none !important; outline:2px solid red; background-color:#f5cccc; }
+select.form-control:hover { cursor:pointer; }
+
+/* ______________________________________________________________#*/
+.ui-accordion-header.ui-accordion-header-active { background:red; } /*For jQuery UI plugin*/
+.ui-accordion-content.ui-accordion-content-active { background:#4ef510; } /*For jQuery UI plugin*/
+/* ______________________________________________________________/ #*/
+
+
+
+/* ______________________________________________________________#FOOTER */
+footer.footer { background:black; }
+/* ______________________________________________________________/ #FOOTER */
