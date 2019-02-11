@@ -9,14 +9,11 @@ class ErrorHandlerController extends Controller
      *  @return \Illuminate\Http\Response
     */
     public function errorCode404() {
-        $show_controller_info = __METHOD__; //для наглядного отображение в View,которое рендерится,имени Контроллера и Метода,кот.непосредственно рендерит View
-        //______________________________________________________________________________________________________________________________________________________
-
-        /* => Рендерим View */
-        if( view()->exists('frontendsite.'.env('THEME').'.404') ){  //проверяем, есть ли такая View по такому пути, если да, то тогда ее будем рендерить в метод view()
+        $show_controller_info = __METHOD__; 
+        if( view()->exists('frontendsite.'.env('THEME').'.404') ){ 
             return view('frontendsite.'.env('THEME').'.404', [
                 'show_controller_info' => $show_controller_info,
-            ])->render(); //->render() - можно не писать
+            ])->render();
         }
     }
 
@@ -24,14 +21,12 @@ class ErrorHandlerController extends Controller
      *  @return \Illuminate\Http\Response
     */
     public function errorCode405() {
-        $show_controller_info = __METHOD__; //для наглядного отображение в View,которое рендерится,имени Контроллера и Метода,кот.непосредственно рендерит View
-        //______________________________________________________________________________________________________________________________________________________
+        $show_controller_info = __METHOD__;
 
-        /* => Рендерим View */
-        if( view()->exists('frontendsite.'.env('THEME').'.404') ){  //проверяем, есть ли такая View по такому пути, если да, то тогда ее будем рендерить в метод view()
+        if( view()->exists('frontendsite.'.env('THEME').'.404') ){  
             return view('frontendsite.'.env('THEME').'.404', [
                 'show_controller_info' => $show_controller_info,
-            ])->render(); //->render() - можно не писать
+            ])->render();
         }
     }
-} //__/class ErrorHandlerController
+}

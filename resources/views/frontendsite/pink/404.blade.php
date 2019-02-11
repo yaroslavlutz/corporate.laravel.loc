@@ -1,7 +1,7 @@
 <style>
 section#_404_section{
     width:100%;
-    height:100vh; /* высота секции равна высоте области просмотра */
+    height:100vh;
     background:#000;
     color:#fff;
     text-align:center;

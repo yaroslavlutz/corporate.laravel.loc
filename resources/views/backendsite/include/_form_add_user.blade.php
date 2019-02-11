@@ -12,28 +12,28 @@
                 <label for="menu_title_input" class="control-label col-sm-2">Name of User:</label>
                 <div class="col-sm-8">
                     <input type="text" name="user_name_input" id="user_name_input" value="{{ old('user_name_input') }}" class="form-control <?=($errors->has('user_name_input')) ? 'input-error' : '';?>" placeholder="Name of User" />
-                    @if ($errors->has('user_name_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('user_name_input') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('user_name_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('user_name_input') }} </span> @endif 
                 </div>
             </div>
             <div class="form-group">
                 <label for="user_email_input" class="control-label col-sm-2">E-mail of User:</label>
                 <div class="col-sm-8">
                     <input type="email" name="user_email_input" id="user_email_input"  value="{{ old('user_email_input') }}" class="form-control <?=($errors->has('user_email_input')) ? 'input-error' : '';?>" placeholder="E-mail of User" />
-                    @if ($errors->has('user_email_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('user_email_input') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('user_email_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('user_email_input') }} </span> @endif 
                 </div>
             </div>
             <div class="form-group">
                 <label for="user_password_input" class="control-label col-sm-2">Password of User:</label>
                 <div class="col-sm-8">
                     <input type="text" name="password" id="user_password_input"  value="{{ old('user_password_input') }}" class="form-control <?=($errors->has('password')) ? 'input-error' : '';?>" placeholder="Password of User" />
-                    @if ($errors->has('password')) <span class="help-block" style="color:darkred;"> {{ $errors->first('password') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('password')) <span class="help-block" style="color:darkred;"> {{ $errors->first('password') }} </span> @endif  
                 </div>
             </div>
             <div class="form-group">
                 <label for="user_password_input_confirmation" class="control-label col-sm-2">Password confirmation:</label>
                 <div class="col-sm-8">
                     <input type="text" name="password_confirmation" id="user_password_input_confirmation"  value="{{ old('password_confirmation') }}" class="form-control <?=($errors->has('password_confirmation')) ? 'input-error' : '';?>" placeholder="Password confirmation" />
-                    @if ($errors->has('password_confirmation')) <span class="help-block" style="color:darkred;"> {{ $errors->first('password_confirmation') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('password_confirmation')) <span class="help-block" style="color:darkred;"> {{ $errors->first('password_confirmation') }} </span> @endif
                 </div>
             </div>
             <div class="form-group">

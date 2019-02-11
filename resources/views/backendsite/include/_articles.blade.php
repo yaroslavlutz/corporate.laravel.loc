@@ -1,7 +1,3 @@
-<?php
-//dump($all_articles);
-?>
-<!-- Articles Section -->
 <div id="article_anchor_section" class="article-section" style="margin-top:22px;">
     <div class="container-fluid">
 
@@ -40,7 +36,7 @@
                 <td style="text-align: center;">
                     <form class="form-horizontal" name="admin_delete_article" action="{{ route('admin_articles_delete',['alias'=>$i_article->alias]) }}" method="post" novalidate>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <!-- <input type="hidden" name="_method" value="delete"> это скрытое поле для того,чтобы осуществить REST-метод DELETE - `public function destroy()` в `app/Http/Controllers/Admin/ArticleResourceController.php`. Строка ниже генерирует тоже самое -->
+
                         {{ method_field('delete') }}
 
                         <div class="form-group">

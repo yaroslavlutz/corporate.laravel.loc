@@ -1,6 +1,3 @@
-<?php
-//dump($all_menus);
-?>
 <h6> &nbsp;&nbsp;<i>Simple example Accordion with jQuery UI plugin:</i></h6>
 <div id="accordion">
     <h3>Section 1 <input type="radio" name="check_box_radio" id="checkBox_1" value="1"/> </h3>
@@ -63,14 +60,14 @@
                 <label for="menu_title_input" class="control-label col-sm-2">Title of Menu:</label>
                 <div class="col-sm-8">
                     <input type="text" name="menu_title_input" id="menu_title_input"  value="{{ old('menu_title_input') }}" class="form-control <?=($errors->has('menu_title_input')) ? 'input-error' : '';?>" placeholder="Title of Menu" />
-                    @if ($errors->has('menu_title_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('menu_title_input') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('menu_title_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('menu_title_input') }} </span> @endif  
                 </div>
             </div>
             <div class="form-group">
                 <label for="select_nesting_menu_item" class="control-label col-sm-2">Select nesting Menu Item:</label>
                 <div class="col-sm-8">
                     <select class="form-control" name="select_nesting_menu_item" id="select_nesting_menu_item">
-                        <option value="0"> Parent Item Menu </option> <!--родительский пункт Меню у нас должен иметь `parent_menu_id` = 0 -->
+                        <option value="0"> Parent Item Menu </option> 
                         <optgroup label="Sub Menu Item for:">
                             <?php foreach( $all_menus as $i_menu ):?>
                             <option value="<?=$i_menu['id'];?>"> <?=$i_menu['title'];?> </option>
@@ -83,7 +80,7 @@
                 <label for="menu_urlpath_input" class="control-label col-sm-2">URL path of Menu:</label>
                 <div class="col-sm-8">
                     <input type="text" name="menu_urlpath_input" id="menu_urlpath_input"  value="{{ old('menu_urlpath_input') }}" class="form-control <?=($errors->has('menu_urlpath_input')) ? 'input-error' : '';?>" placeholder="URL path of Menu" />
-                    @if ($errors->has('menu_urlpath_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('menu_urlpath_input') }} </span> @endif  <!--при first() будет выводиться 1-я из валидируемых ошибок для поля, при get() - все -->
+                    @if ($errors->has('menu_urlpath_input')) <span class="help-block" style="color:darkred;"> {{ $errors->first('menu_urlpath_input') }} </span> @endif  
                 </div>
             </div>
 

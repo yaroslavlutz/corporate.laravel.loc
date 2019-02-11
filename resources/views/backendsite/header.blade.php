@@ -1,11 +1,5 @@
 @section('header')
-<?php
-//dump($vars_for_template_view);
-//dump($nav_menu);
-?>
 <div class="container-fluid">
-
-    <!--ПАНЕЛЬ стандартной АУТЕНТИФИКАЦИИ(логинация/регистрация)-->
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -61,7 +55,6 @@
             </div>
         </div>
     </nav>
-    <!--/ПАНЕЛЬ стандартной АУТЕНТИФИКАЦИИ(логинация/регистрация)-->
 
     <section id="admin_main_toolbar">
         <div class="row">

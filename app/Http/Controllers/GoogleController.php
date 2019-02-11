@@ -18,7 +18,6 @@ class GoogleController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('google')->user();
-        //dd($user); //смотреть данные Юзера пришли ли с API Google,тогда далее можем с ними что-то делать
 
         /* All Providers */
         echo $user->getId(); echo '<br/>';
@@ -27,9 +26,6 @@ class GoogleController extends Controller
         echo $user->getEmail(); echo '<br/>';
 
         echo '<img src="'.$user->getAvatar().'">';
-
-        //$user->token;
-        //return view('home');
     }
 
-} //__/class GoogleController
+}

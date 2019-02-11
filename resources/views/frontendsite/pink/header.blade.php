@@ -1,16 +1,9 @@
 @section('header')
 <?php
-//$lang = 'en'; App::setLocale( $lang );
-
-//dump($nav_menu);
-//dump($vars_for_template_view);
-//dump($keywords); dump($meta_description); dump($title);
-?>
-<?php
-$current_route = Route::currentRouteName(); //Имя текущего роута(маршрута) для данной страницы(страницы на кот.мы нах.)
-$url_current = \Illuminate\Support\Facades\URL::current(); //текущий URL(то,что в адресной строке в данный момент)
-$url_current_slash = $url_current.'/'; //текущий URL(то,что в адресной строке в данный момент) c слешем
-$site_url =  url()->full(); //URL сайта(Главной страницы)
+$current_route = Route::currentRouteName();
+$url_current = \Illuminate\Support\Facades\URL::current();
+$url_current_slash = $url_current.'/';
+$site_url =  url()->full();
 ?>
 
 <nav class="navbar navbar-default menu navbar-fixed-top affix-top">
@@ -31,16 +24,16 @@ $site_url =  url()->full(); //URL сайта(Главной страницы)
             <ul class="nav navbar-nav">
                 <?php if( isset($nav_menu) && is_array($nav_menu) ):?>
                     <?php for( $i=0; $i < count($nav_menu); ++$i ):?>
-                        <?php if( !isset($nav_menu[$i]['submenu']) ) {?> <!--если это родительс.пункты меню,без дополнительного элемента массива "submenu",кот.является тоже массивом -->
+                        <?php if( !isset($nav_menu[$i]['submenu']) ) {?> 
                             <li id="id_page_<?=$nav_menu[$i]['id'];?>" class="<?=($current_route == $nav_menu[$i]['url_path'] || ($nav_menu[$i]['url_path'] == '/' and $current_route == 'home') ) ? 'active' : '';?>">
-                                <?php if( $nav_menu[$i]['url_path'] == '/' ):?> <!--Для "Home" page исключительно,т.к.роута с '/' у нас нету-->
+                                <?php if( $nav_menu[$i]['url_path'] == '/' ):?> 
                                     <a href="<?=$nav_menu[$i]['url_path'];?>"><?=$nav_menu[$i]['title'];?></a>
                                 <?php else: ?>
                                     <a href="{{ route($nav_menu[$i]['url_path']) }}"><?=$nav_menu[$i]['title'];?></a>
                                 <?php endif;?>
                             </li>
                         <?php }
-                        else { ?>  <!--если это дочерние.пункты меню,с дополнительным элементом массива "submenu",кот.является тоже массивом -->
+                        else { ?>  
                             <li id="id_page_<?=$nav_menu[$i]['id'];?>" class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="<?=$nav_menu[$i]['url_path'];?>"><?=$nav_menu[$i]['title'];?> <span class="caret"></span> </a>
                                 <ul class="dropdown-menu">

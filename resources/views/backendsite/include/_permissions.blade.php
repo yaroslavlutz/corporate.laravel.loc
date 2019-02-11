@@ -1,8 +1,3 @@
-<?php
-//dump($all_roles);
-//dump($all_permissions);
-use App\Role;
-?>
 <!-- Permissions Section -->
 <div id="permission_anchor_section" class="permission-section" style="margin-top:22px;">
     <div class="container-fluid">
@@ -43,7 +38,7 @@ use App\Role;
                             <?php foreach( $all_roles as $item_role):?>
                             <td>
                                 <?php if( $item_role->hasPermissions( $item_role->id, $item_permission->name, false ) ):?>
-                                    <input type="checkbox" name="<?=$item_role->id;?>[]" value="<?=$item_permission->id;?>" checked /> <!--Выводим checkBox с параметром `checked`,если у данной роли(Role) присутствует уже такое(ие) права(Permissions) -->
+                                    <input type="checkbox" name="<?=$item_role->id;?>[]" value="<?=$item_permission->id;?>" checked />
                                 <?php else:?>
                                     <input type="checkbox" name="<?=$item_role->id;?>[]" value="<?=$item_permission->id;?>" />
                                 <?php endif;?>

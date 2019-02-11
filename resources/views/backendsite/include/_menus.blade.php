@@ -1,7 +1,3 @@
-<?php
-//dump($all_menus);
-?>
-<!-- Articles Section -->
 <div id="menu_anchor_section" class="menus-section" style="margin-top:22px;">
     <div class="container-fluid">
 
@@ -28,9 +24,7 @@
                 <td style="text-align:center;">
                     <form class="form-horizontal" name="admin_delete_menu" action="{{ route('admin_menus_delete',['menu'=>$i_menu['id']]) }}" method="post" novalidate>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <!-- <input type="hidden" name="_method" value="delete"> это скрытое поле для того,чтобы осуществить REST-метод DELETE - `public function destroy()` в `app/Http/Controllers/Admin/MenuResourceController.php`. Строка ниже генерирует тоже самое -->
                         {{ method_field('delete') }}
-
                         <div class="form-group">
                             <div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s" data-wow-offset="80">
                                 <button type="submit" class="btn btn-sm btn-danger" name="btn_submit_admin_delete_menu" id="id_btn_submit_admin_delete_menu" data-toggle="tooltip" data-placement="top" title="Delete this Menu" style="line-height:0.8; padding-left:20px; padding-right:20px;">
@@ -42,7 +36,7 @@
                 </td>
             </tr>
 
-            <?php if( isset($i_menu['submenu']) ) {?> <!--если это дочерние.пункты меню,с дополнительным элементом массива "submenu",кот.является тоже массивом,то выводим их-->
+            <?php if( isset($i_menu['submenu']) ) {?> 
                 <?php foreach( $i_menu['submenu'] as $i_submenu):?>
                 <tr>
                     <td> <strong><?=$index++;?></strong> </td>
@@ -52,9 +46,7 @@
                     <td style="text-align: center;">
                         <form class="form-horizontal" name="admin_delete_menu" action="{{ route('admin_menus_delete',['menu'=>$i_submenu['id']]) }}" method="post" novalidate>
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <!-- <input type="hidden" name="_method" value="delete"> это скрытое поле для того,чтобы осуществить REST-метод DELETE - `public function destroy()` в `app/Http/Controllers/Admin/MenuResourceController.php`. Строка ниже генерирует тоже самое -->
                             {{ method_field('delete') }}
-
                             <div class="form-group">
                                 <div class="col-lg-12 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.3s" data-wow-offset="80">
                                     <button type="submit" class="btn btn-sm btn-danger" name="btn_submit_admin_delete_menu" id="id_btn_submit_admin_delete_menu" data-toggle="tooltip" data-placement="top" title="Delete this Menu" style="line-height:0.8; padding-left:20px; padding-right:20px;">

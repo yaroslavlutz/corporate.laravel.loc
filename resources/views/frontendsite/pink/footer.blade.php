@@ -1,8 +1,4 @@
 @section('footer')
-<?php
-//dump($vars_for_template_view);
-//dump($keywords); dump($meta_description); dump($title);
-?>
 <div class="container-fluid">
     <h3 class='text-center'> FOOTER </h3>
     <div class="col-lg-1 col-lg-offset-4"> <img class="img-responsive" src="<?=asset('img/download.gif');?>"> </div>
